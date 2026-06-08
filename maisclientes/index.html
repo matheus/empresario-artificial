@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Empresário Artificial | Mais Clientes IA</title>
-  <meta name="description" content="Mais Clientes IA: sistema pronto para micro empresas receberem mais pedidos de orçamento, organizarem clientes e venderem mais. Pagamento único, sem mensalidade.">
+  <title>Empresário Artificial | Mais Clientes</title>
+  <meta name="description" content="Mais Clientes: sistema pronto para micro empresas receberem mais pedidos de orçamento, organizarem clientes e venderem mais. Pagamento único, sem mensalidade.">
 
   <style>
     :root {
@@ -814,7 +814,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="pill">Mais Clientes IA</div>
+          <div class="pill">Mais Clientes</div>
           <h1>Receba mais pedidos de orçamento</h1>
           <p class="lead">Um sistema pronto para atrair mais clientes e transformar interesse em vendas para sua empresa.</p>
 
@@ -1092,8 +1092,8 @@
   </footer>
   <script>
     const WHATSAPP_NUMBER = "5516982650942"; // Troque pelo seu número com DDI + DDD.
-    const MAKE_WEBHOOK_URL = "https://n8n.libertax.com.br/webhook/maisclientes";
-    const SERVICO_DA_PAGINA = "Mais Clientes IA";
+    const N8N_WEBHOOK_URL = "https://hooks.libertax.com.br/webhook/maisclientes"; // Ex: https://n8n.seudominio.com/webhook/mais-clientes
+    const SERVICO_DA_PAGINA = "Mais Clientes";
     const pageStartTime = Date.now();
     let botaoClicado = "";
 
@@ -1222,12 +1222,11 @@ Vim pela landing page do Empresário Artificial.`;
       formStatus.textContent = "Registrando seus dados antes de abrir o WhatsApp.";
 
       try {
-        if (MAKE_WEBHOOK_URL && !MAKE_WEBHOOK_URL.includes("COLE_AQUI")) {
-          await fetch(MAKE_WEBHOOK_URL, {
+        if (N8N_WEBHOOK_URL && !N8N_WEBHOOK_URL.includes("COLE_AQUI")) {
+          await fetch(N8N_WEBHOOK_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(lead),
-            mode: "no-cors"
+            body: JSON.stringify(lead)
           });
         }
 
